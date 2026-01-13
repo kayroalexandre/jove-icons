@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JOVE ICONS — Teste</title>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        padding: 40px;
+        color: #e63946;
+      }
+
+      .row {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>JOVE ICONS</h1>
+
+    <div class="row" id="icons"></div>
+
+    <script type="module">
+      import { createIcon } from "./web/icon.ts"
+
+      const container = document.getElementById("icons")
+
+      const heartOutline = createIcon({
+        variant: "outline",
+        size: "lg"
+      })
+
+      const heartFilled = createIcon({
+        variant: "filled",
+        size: "lg"
+      })
+
+      const heartDuotone = createIcon({
+        variant: "duotone",
+        size: "lg"
+      })
+
+      container.appendChild(heartOutline)
+      container.appendChild(heartFilled)
+      container.appendChild(heartDuotone)
+    </script>
+  </body>
+</html>
