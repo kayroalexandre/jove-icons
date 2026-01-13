@@ -1,14 +1,13 @@
-import type { IconVariant } from "./types"
-import { iconStrokes } from "../tokens"
+import type { VariantTransformer } from "./types";
 
 /**
  * Outline variant
- * Applies stroke and no fill
- */
-export const outline: IconVariant = (svg) => {
-  return svg
-    .replace(
-      "<svg",
-      `<svg fill="none" stroke="currentColor" stroke-width="${iconStrokes.regular}"`
-    )
-}
+  */
+  export const outline: VariantTransformer = (svg) => {
+    return svg
+        .replace(/fill="[^"]*"/g, 'fill="none"')
+            .replace(
+                  "<svg",
+                        '<svg stroke="currentColor" stroke-width="var(--jove-icon-stroke-regular)"'
+                            );
+                            };

@@ -1,18 +1,17 @@
-import type { IconVariant } from "./types"
-import { iconColors } from "../tokens"
+import type { VariantTransformer } from "./types";
 
 /**
  * Duotone variant
- * Uses primary and secondary colors
+ * Uses opacity tokens for layers
  */
-export const duotone: IconVariant = (svg) => {
+export const duotone: VariantTransformer = (svg) => {
   return svg
     .replace(
       "<svg",
-      `<svg fill="${iconColors.primary}"`
+      `<svg fill="currentColor">`
     )
     .replace(
       "<path",
-      `<path fill="${iconColors.secondary}" opacity="0.6"`
-    )
-}
+      `<path opacity="var(--jove-icon-duotone-secondary-opacity)"`
+    );
+};

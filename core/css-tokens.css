@@ -1,0 +1,22 @@
+:root {
+  /* Sizes */
+  --jove-icon-size-xs: 12px;
+  --jove-icon-size-sm: 16px;
+  --jove-icon-size-md: 20px;
+  --jove-icon-size-lg: 28px;
+  --jove-icon-size-xl: 36px;
+
+  /* Stroke widths */
+  --jove-icon-stroke-thin: 1.25;
+  --jove-icon-stroke-regular: 1.75;
+  --jove-icon-stroke-bold: 2.25;
+
+  /* Duotone opacity */
+  --jove-icon-duotone-primary-opacity: 1;
+  --jove-icon-duotone-secondary-opacity: 0.4;
+
+  /* Animations */
+  --jove-icon-spin-duration: 1.2s;
+  --jove-icon-pulse-duration: 1.4s;
+  --jove-icon-bounce-duration: 1s;
+}

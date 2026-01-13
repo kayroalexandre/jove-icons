@@ -1,5 +1,3 @@
-export { outline } from "./outline"
-export { filled } from "./filled"
-export { duotone } from "./duotone"
-
-export type { IconVariant } from "./types"
+export { outline } from "./outline";
+export { filled } from "./filled";
+export { duotone } from "./duotone";

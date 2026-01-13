@@ -1,6 +1,6 @@
-/// <reference types="vite/client" />
+import { defineConfig } from "vite";
 
-declare module "*.svg?raw" {
-  const content: string
-  export default content
-}
+export default defineConfig({
+  // configuração mínima e válida
+});
+

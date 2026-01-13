@@ -1,4 +1,4 @@
-// JOVE ICONS — Core public exports
-
-export * from "./variants"
-export * from "./tokens"
+export * from "./schema";
+export * from "./tokens";
+export * from "./variants";
+export * from "./animations";

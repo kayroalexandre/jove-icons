@@ -1,12 +1,16 @@
-import { outline, filled, duotone, iconSizes } from "../core"
-import heart from "../core/shapes/heart.svg?raw"
+import { outline, filled, duotone, iconSizes } from "../core";
+import type { IconAnimation } from "../core";
+import { animationClassMap } from "../core";
 
-type IconVariant = "outline" | "filled" | "duotone"
+import heart from "../core/shapes/heart.svg?raw";
+
+type IconVariant = "outline" | "filled" | "duotone";
 
 interface CreateIconOptions {
-  variant?: IconVariant
-  size?: keyof typeof iconSizes
-  className?: string
+  variant?: IconVariant;
+  size?: keyof typeof iconSizes;
+  animation?: IconAnimation;
+  className?: string;
 }
 
 /**
@@ -16,25 +20,34 @@ export function createIcon(options: CreateIconOptions = {}) {
   const {
     variant = "outline",
     size = "md",
+    animation,
     className
-  } = options
+  } = options;
 
-  let svg = heart
+  let svg = heart;
 
-  if (variant === "filled") svg = filled(svg)
-  if (variant === "duotone") svg = duotone(svg)
-  if (variant === "outline") svg = outline(svg)
+  if (variant === "filled") svg = filled(svg);
+  if (variant === "duotone") svg = duotone(svg);
+  if (variant === "outline") svg = outline(svg);
 
-  const wrapper = document.createElement("span")
-  wrapper.innerHTML = svg
+  const wrapper = document.createElement("span");
+  wrapper.innerHTML = svg;
 
-  const svgEl = wrapper.firstElementChild as SVGElement
-  svgEl.style.width = iconSizes[size]
-  svgEl.style.height = iconSizes[size]
+  const svgEl = wrapper.firstElementChild as SVGElement;
 
-  if (className) {
-    svgEl.classList.add(className)
+  svgEl.style.width = `var(--jove-icon-size-${size})`;
+  svgEl.style.height = `var(--jove-icon-size-${size})`;
+
+  if (animation) {
+    const animClass = animationClassMap[animation];
+    if (animClass) {
+      svgEl.classList.add(animClass);
+    }
   }
 
-  return svgEl
+  if (className) {
+    svgEl.classList.add(className);
+  }
+
+  return svgEl;
 }
