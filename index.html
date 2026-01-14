@@ -2,44 +2,28 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>JOVE ICONS — Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        padding: 40px;
-        color: #e63946;
-      }
+    <title>JOVE ICONS</title>
 
-      h1 {
-        margin-bottom: 24px;
-      }
+    <!-- Tokens CSS do core -->
+    <link rel="stylesheet" href="/core/css-tokens.css" />
 
-      .row {
-        display: flex;
-        gap: 32px;
-        align-items: center;
-      }
-    </style>
+    <!-- Animações -->
+    <link rel="stylesheet" href="/web/animations.css" />
   </head>
 
   <body>
-    <h1>JOVE ICONS</h1>
+    <h1 style="color: red;">JOVE ICONS</h1>
 
-    <!-- Teste dos Web Components -->
-    <div class="row">
-      <jove-icon name="heart" size="lg"></jove-icon>
+    <!-- Teste dos ícones -->
+    <div style="display: flex; gap: 32px; align-items: center;">
+      <jove-icon name="heart" variant="outline" size="lg"></jove-icon>
       <jove-icon name="heart" variant="filled" size="lg"></jove-icon>
       <jove-icon name="heart" variant="duotone" size="lg"></jove-icon>
     </div>
 
-    <!-- Registro dos módulos -->
-    <script type="module">
-      // Adapter base
-      import "./web/icon.ts";
-
-      // Web Component <jove-icon>
-      import "./web/jove-icon.ts";
-    </script>
+    <!-- ENTRY POINT DO VITE (ÚNICO SCRIPT PERMITIDO AQUI) -->
+    <script type="module" src="/main.ts"></script>
   </body>
-</html> 
+</html>
